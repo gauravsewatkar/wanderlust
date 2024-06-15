@@ -18,7 +18,7 @@ pipeline {
         stage('Git: Code Checkout') {
             steps {
                 script{
-                    code_checkout("https://github.com/DevMadhup/wanderlust.git","devops")
+                    code_checkout("https://github.com/gauravsewatkar/wanderlust.git","devops")
                 }
             }
         }
@@ -88,11 +88,11 @@ pipeline {
             steps{
                 script{
                     dir('backend'){
-                        docker_build("backend-wanderlust","test-image-donot-use","madhupdevops")
+                        docker_build("backend-wanderlust","test-image-donot-use","garry1325")
                     }
                     
                     dir('frontend'){
-                        docker_build("frontend-wanderlust","test-image-donot-use","madhupdevops")
+                        docker_build("frontend-wanderlust","test-image-donot-use","garry1325")
                     }
                 }
             }
@@ -101,8 +101,8 @@ pipeline {
         stage("Docker: Push to DockerHub"){
             steps{
                 script{
-                    docker_push("backend-wanderlust","test-image-donot-use","madhupdevops") 
-                    docker_push("frontend-wanderlust","test-image-donot-use","madhupdevops")
+                    docker_push("backend-wanderlust","test-image-donot-use","garry1325") 
+                    docker_push("frontend-wanderlust","test-image-donot-use","garry1325")
                 }
             }
         }
